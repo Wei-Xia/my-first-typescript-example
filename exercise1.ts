@@ -1,3 +1,5 @@
+console.log("---------- This is Exercise 1 -------------");
+
 let bankAccount: {money: number, deposit: (value: number) => void} = {
     money: 2000,
     deposit(value) {

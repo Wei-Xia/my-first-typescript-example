@@ -1,9 +1,49 @@
 console.log("Hello World!");
 
-let myName = "Wei Xia"
+// string
+let myName: string = 'Max';
+// myName = 28;
+ 
+// number
+let myAge: number = 27;
+// myAge = 'Max';
+
+// boolean
+let hasHobbies: boolean = false;
+// hasHobbies = 1;
+
+// assign types
+let myRealAgeTest: number;
+myRealAgeTest = 27;
+// myRealAgeTest = '27';
+
+// array
+let hobbies: any[] = ["Cooking", "Sports"];
+hobbies = [100];
+// hobbies = 100;
+
+// tuples
+let address: [string, number] = ["Superstreet", 99];
+
+// enum
+enum Color {
+    Gray, // 0
+    Green = 100, // 100
+    Blue = 2// 2
+}
+let myColor: Color = Color.Blue;
+console.log(myColor);
+
+// any
+let car: any = "BMW";
+console.log(car);
+car = { brand: "BMW", series: 3};
+console.log(car);
+
+let myNameTest = "Wei Xia"
 
 function returnMyName(): string {
-    return myName;
+    return myNameTest;
 }
 
 console.log(returnMyName());
@@ -110,6 +150,8 @@ reset();
 console.log("block scope");
 console.log(nameTest);
 
+
+// Arrow Function
 console.log("Arrow function ----------------------------");
 const addNumbers = function(num1: number, num2: number): number {
   return num1 + num2;  
@@ -169,7 +211,6 @@ console.log(userName2, userAge2);
 
 const {userName: userName1, userAge: userAge1} = myData;
 console.log(userAge1, userName1);
-
 
 // Template Literals
 const hisName = "John";

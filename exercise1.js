@@ -1,4 +1,5 @@
 "use strict";
+console.log("---------- This is Exercise 1 -------------");
 var bankAccount = {
     money: 2000,
     deposit: function (value) {
