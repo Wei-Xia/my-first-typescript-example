@@ -144,3 +144,36 @@ console.log("Rest and Spread operator -------------------------");
 const numberInArray = [1, 10, 294, 999];
 console.log(Math.max(1, 2, 3, 17));
 console.log(Math.max(...numberInArray)); // spread function
+
+function newArray(arg1: number, arg2: number) {
+    return [arg1, arg2];
+}
+console.log(newArray(88, 99));
+
+function newArrayWithArgs(...args: number[]) {
+    return args;
+}
+console.log(newArrayWithArgs(77, 88, 99));
+
+
+// Destructuring
+console.log("Destructuring ----------------------");
+const myHobbies = ["Hobby ONE", "Hobby TWO", "Hobby THREE"];
+const [hobby1, hobby2] = myHobbies;
+console.log(hobby1, hobby2);
+
+const myData = {userName: "WeiXia", userAge: 19};
+const userName2 = myData.userName;
+const userAge2 = myData.userAge;
+console.log(userName2, userAge2);
+
+const {userName: userName1, userAge: userAge1} = myData;
+console.log(userAge1, userName1);
+
+
+// Template Literals
+const hisName = "John";
+const greetingAgain = `Hello,
+His is ${hisName}.
+He is a developer`;
+console.log(greetingAgain);

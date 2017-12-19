@@ -112,3 +112,30 @@ console.log("Rest and Spread operator -------------------------");
 var numberInArray = [1, 10, 294, 999];
 console.log(Math.max(1, 2, 3, 17));
 console.log(Math.max.apply(Math, numberInArray)); // spread function
+function newArray(arg1, arg2) {
+    return [arg1, arg2];
+}
+console.log(newArray(88, 99));
+function newArrayWithArgs() {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    return args;
+}
+console.log(newArrayWithArgs(77, 88, 99));
+// Destructuring
+console.log("Destructuring ----------------------");
+var myHobbies = ["Hobby ONE", "Hobby TWO", "Hobby THREE"];
+var hobby1 = myHobbies[0], hobby2 = myHobbies[1];
+console.log(hobby1, hobby2);
+var myData = { userName: "WeiXia", userAge: 19 };
+var userName2 = myData.userName;
+var userAge2 = myData.userAge;
+console.log(userName2, userAge2);
+var userName1 = myData.userName, userAge1 = myData.userAge;
+console.log(userAge1, userName1);
+// Template Literals
+var hisName = "John";
+var greetingAgain = "Hello,\nHis is " + hisName + ".\nHe is a developer";
+console.log(greetingAgain);
