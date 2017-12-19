@@ -91,3 +91,24 @@ var addNumbers = function (num1, num2) {
 console.log(addNumbers(99, 189));
 var multiplyNumbers = function (num1, num2) { return num1 * num2; };
 console.log(multiplyNumbers(10, 11));
+var greeting = function () {
+    console.log("ni hao!");
+};
+var greetingToFriend = function (friend) { return console.log(friend); };
+greetingToFriend("ni hao xia wei!");
+// Default Parameters
+console.log("Default parameters ------------------------------------");
+var countDown = function (start) {
+    if (start === void 0) { start = 99; }
+    console.log(start);
+    while (start > 0) {
+        start--;
+    }
+    console.log("Done!", start);
+};
+countDown();
+// Rest & Spread operator
+console.log("Rest and Spread operator -------------------------");
+var numberInArray = [1, 10, 294, 999];
+console.log(Math.max(1, 2, 3, 17));
+console.log(Math.max.apply(Math, numberInArray)); // spread function

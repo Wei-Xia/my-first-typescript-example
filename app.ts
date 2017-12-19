@@ -60,7 +60,6 @@ let myRealAge: number | string;
 myRealAge = 10;
 myRealAge = "11";
 
-
 // check types
 let checkTypes = "I am a string";
 
@@ -119,3 +118,29 @@ console.log(addNumbers(99, 189));
 
 const multiplyNumbers = (num1: number, num2: number) => num1 * num2;
 console.log(multiplyNumbers(10, 11));
+
+const greeting = () => {
+    console.log("ni hao!");
+}
+
+const greetingToFriend = (friend : string) => console.log(friend);
+greetingToFriend("ni hao xia wei!")
+
+
+// Default Parameters
+console.log("Default parameters ------------------------------------");
+
+const countDown = (start: number = 99): void =>{
+    console.log(start);
+    while (start > 0 ) {
+        start --;
+    }
+    console.log("Done!", start);
+}
+countDown();
+
+// Rest & Spread operator
+console.log("Rest and Spread operator -------------------------");
+const numberInArray = [1, 10, 294, 999];
+console.log(Math.max(1, 2, 3, 17));
+console.log(Math.max(...numberInArray)); // spread function
