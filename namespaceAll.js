@@ -1,25 +1,4 @@
-// Namespace
-var MyMath;
-(function (MyMath) {
-    var PI = 3.1415;
-    // use export to make it be accessed globally
-    function calcCircumference(diameter) {
-        return diameter * PI;
-    }
-    MyMath.calcCircumference = calcCircumference;
-})(MyMath || (MyMath = {}));
-// Namespace
-var MyMath;
-(function (MyMath) {
-    // use export to make it be accessed globally
-    var Rectangle;
-    (function (Rectangle) {
-        function calcRectangle(width, length) {
-            return width * length;
-        }
-        Rectangle.calcRectangle = calcRectangle;
-    })(Rectangle = MyMath.Rectangle || (MyMath.Rectangle = {}));
-})(MyMath || (MyMath = {}));
+"use strict";
 /// <reference path="namespaceCir.ts" />
 /// <reference path="namespaceRec.ts" />
 // namespace MyMath {

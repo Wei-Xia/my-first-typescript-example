@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Wei-Xia/my-first-typescript-example#readme",
   "devDependencies": {
     "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "systemjs": "^0.20.19"
   }
 }

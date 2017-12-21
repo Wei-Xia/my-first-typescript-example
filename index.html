@@ -3,10 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <title>Learning Typescript</title>
-        <script src="namespaceAll.js"></script>
         <!-- <script src="exercise3.js"></script> -->
     </head>
     <body>
+        <script src="node_modules/systemjs/dist/system.js"></script>
+        <script>
+            SystemJS.import('module.js');
+            SystemJS.config({
+                baseURL: '/',
+                packages: {
+                    '/': {
+                        defaultExtension: 'js'
+                    }
+                }
+            })
+        </script>
         hello
     </body>
 </html>

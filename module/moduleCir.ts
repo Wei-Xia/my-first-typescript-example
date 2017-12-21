@@ -1,5 +1,5 @@
-const PI = 3.1415;
+export const PI = 3.1415;
 
-function calcCircumference(diameter: number) {
+export function calcCircumference(diameter: number) {
     return diameter * PI;
 }
