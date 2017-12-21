@@ -44,3 +44,33 @@ const newPersonAgain = new PersonAgain();
 newPersonAgain.firstName = "James";
 greetings(newPersonAgain);
 newPersonAgain.greetingsInterface("Hsia");
+
+
+// Function Types
+interface DoubleNumberFunc {
+    (number1: number, number2: number) : number;
+}
+
+let myDoubleNumberFunc : DoubleNumberFunc;
+myDoubleNumberFunc = function(num1: number, num2: number) {
+    return 2 * (num1 + num2);
+}
+
+console.log(myDoubleNumberFunc(10, 21));
+
+
+// Interace Inheritance
+interface personInheritance extends NamePerson {
+    age: number;
+}
+
+const personInheritanceExample: personInheritance = {
+    age: 18,
+    firstName: "personInheritanceExample",
+    greetingsInterface(lastName: string) {
+        console.log("This is the personInheritanceExample");
+        console.log(lastName);
+    }
+}
+
+console.log(personInheritanceExample);

@@ -31,3 +31,17 @@ var newPersonAgain = new PersonAgain();
 newPersonAgain.firstName = "James";
 greetings(newPersonAgain);
 newPersonAgain.greetingsInterface("Hsia");
+var myDoubleNumberFunc;
+myDoubleNumberFunc = function (num1, num2) {
+    return 2 * (num1 + num2);
+};
+console.log(myDoubleNumberFunc(10, 21));
+var personInheritanceExample = {
+    age: 18,
+    firstName: "personInheritanceExample",
+    greetingsInterface: function (lastName) {
+        console.log("This is the personInheritanceExample");
+        console.log(lastName);
+    }
+};
+console.log(personInheritanceExample);
