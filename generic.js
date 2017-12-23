@@ -24,4 +24,19 @@ function printArray(args) {
     args.forEach(function (element) { return console.log(element); });
 }
 printArray(['one', 'two', 'three']);
-// Generic Types 
+// Generic Types
+var echoGeneric = betterEcho;
+console.log(echoGeneric("this must be a string"));
+// Generic Class
+var simplyMath = /** @class */ (function () {
+    function simplyMath() {
+    }
+    simplyMath.prototype.calculate = function () {
+        return +this.baseValue * +this.multipValue;
+    };
+    return simplyMath;
+}());
+var simplyMathExample = new simplyMath();
+simplyMathExample.baseValue = "982";
+simplyMathExample.multipValue = 123;
+console.log(simplyMathExample.calculate());

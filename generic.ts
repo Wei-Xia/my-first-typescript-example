@@ -32,3 +32,20 @@ function printArray<T>(args: T[]) {
 printArray<string>(['one', 'two', 'three']);
 
 // Generic Types
+const echoGeneric: <T>(data: T) => T = betterEcho;
+console.log(echoGeneric<string>("this must be a string"));
+
+// Generic Class
+class simplyMath<T extends number | string, U extends number | string> {
+    baseValue: T;
+    multipValue: U;
+
+    calculate() : number {
+        return +this.baseValue * +this.multipValue;
+    }
+}
+
+const simplyMathExample = new simplyMath<string, number>();
+simplyMathExample.baseValue = "982";
+simplyMathExample.multipValue = 123;
+console.log(simplyMathExample.calculate());
