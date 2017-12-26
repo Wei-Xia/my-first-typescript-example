@@ -11,6 +11,9 @@
         <script>
             SystemJS.import('jquery.js');
             SystemJS.config({
+                map: {
+                    "jQuery": "node_modules/jquery/dist/jquery.min.js"
+                },
                 baseURL: '/',
                 packages: {
                     '/': {
