@@ -5,6 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 function logged(constructorFn) {
     console.log(constructorFn);
 }
@@ -80,8 +83,33 @@ var decoratorProject = /** @class */ (function () {
 }());
 var decoratorProjectExample = new decoratorProject("Cool Project");
 decoratorProjectExample.calcBudget();
-decoratorProjectExample.calcBudget = function () {
-    console.log("2000");
-};
+// decoratorProjectExample.calcBudget = function() {
+//     console.log("2000");
+// }
 decoratorProjectExample.calcBudget();
 console.log(decoratorProjectExample);
+// Parameter Decorator
+function printInfo(target, methodName, parameterIndex) {
+    console.log("Target: " + target);
+    console.log("MethodName: " + methodName);
+    console.log("ParameterIndex: " + parameterIndex);
+}
+var courseDecorator = /** @class */ (function () {
+    function courseDecorator() {
+    }
+    courseDecorator.prototype.printAllStudentName = function (mode, printAll) {
+        if (printAll) {
+            console.log("Print all");
+        }
+        else {
+            console.log("Don't Print");
+        }
+    };
+    __decorate([
+        __param(1, printInfo)
+    ], courseDecorator.prototype, "printAllStudentName", null);
+    return courseDecorator;
+}());
+var courseDecoratorExample = new courseDecorator();
+courseDecoratorExample.printAllStudentName("anything", true);
+courseDecoratorExample.printAllStudentName("anything", false);

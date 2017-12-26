@@ -68,8 +68,32 @@ class decoratorProject {
 
 const decoratorProjectExample = new decoratorProject("Cool Project");
 decoratorProjectExample.calcBudget();
-decoratorProjectExample.calcBudget = function() {
-    console.log("2000");
-}
+// decoratorProjectExample.calcBudget = function() {
+//     console.log("2000");
+// }
 decoratorProjectExample.calcBudget();
 console.log(decoratorProjectExample);
+
+
+// Parameter Decorator
+function printInfo(target: any, methodName: string, parameterIndex: number){
+    console.log("Target: " + target);
+    console.log("MethodName: " + methodName);
+    console.log("ParameterIndex: " + parameterIndex);
+}
+
+class courseDecorator {
+    name: string;
+
+    printAllStudentName(mode: string, @printInfo printAll: boolean) {
+        if (printAll) {
+            console.log("Print all");
+        } else {
+            console.log("Don't Print");
+        }
+    }
+}
+
+const courseDecoratorExample = new courseDecorator();
+courseDecoratorExample.printAllStudentName("anything", true);
+courseDecoratorExample.printAllStudentName("anything", false);
