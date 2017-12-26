@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "jquery": "^3.2.1",
-    "systemjs": "^0.20.19",
-    "typings": "^2.1.1"
+    "systemjs": "^0.20.19"
   }
 }
