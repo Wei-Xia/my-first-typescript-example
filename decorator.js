@@ -48,10 +48,19 @@ var Plant = /** @class */ (function () {
 }());
 var plantAgin = new Plant();
 plantAgin.printable();
-//Method Decorator
+// Method Decorator
+// Property Decorator
 function stopEditable(value) {
     return function (target, propName, descriptor) {
         descriptor.writable = value;
+    };
+}
+function overEditable(value) {
+    return function (target, propName) {
+        var newDescriptor = {
+            writable: value
+        };
+        return newDescriptor;
     };
 }
 var decoratorProject = /** @class */ (function () {
@@ -61,6 +70,9 @@ var decoratorProject = /** @class */ (function () {
     decoratorProject.prototype.calcBudget = function () {
         console.log("1000");
     };
+    __decorate([
+        overEditable(true)
+    ], decoratorProject.prototype, "projectName", void 0);
     __decorate([
         stopEditable(false)
     ], decoratorProject.prototype, "calcBudget", null);
@@ -72,3 +84,4 @@ decoratorProjectExample.calcBudget = function () {
     console.log("2000");
 };
 decoratorProjectExample.calcBudget();
+console.log(decoratorProjectExample);

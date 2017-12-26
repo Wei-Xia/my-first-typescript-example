@@ -35,14 +35,25 @@ class Plant {
 const plantAgin = new Plant();
 (<any>plantAgin).printable();
 
-//Method Decorator
+// Method Decorator
+// Property Decorator
 function stopEditable(value: boolean) {
     return function(target: any, propName: any, descriptor: PropertyDescriptor) {
         descriptor.writable = value;
     }
 }
 
+function overEditable(value: boolean) {
+    return function(target: any, propName: string): any {
+        const newDescriptor: PropertyDescriptor = {
+            writable: value
+        };
+        return newDescriptor;
+    }
+}
+
 class decoratorProject {
+    @overEditable(true)
     projectName: string;
 
     constructor (name: string) {
@@ -61,3 +72,4 @@ decoratorProjectExample.calcBudget = function() {
     console.log("2000");
 }
 decoratorProjectExample.calcBudget();
+console.log(decoratorProjectExample);
