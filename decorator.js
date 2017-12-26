@@ -29,4 +29,46 @@ var carDecorator = /** @class */ (function () {
     ], carDecorator);
     return carDecorator;
 }());
-// Advanced Decorator  
+// Advanced Decorator
+function printable(constructorFn) {
+    constructorFn.prototype.printable = function () {
+        console.log(this);
+    };
+}
+console.log("-------------------------------");
+var Plant = /** @class */ (function () {
+    function Plant() {
+        this.name = "Green Plant";
+    }
+    Plant = __decorate([
+        logging(true),
+        printable
+    ], Plant);
+    return Plant;
+}());
+var plantAgin = new Plant();
+plantAgin.printable();
+//Method Decorator
+function stopEditable(value) {
+    return function (target, propName, descriptor) {
+        descriptor.writable = value;
+    };
+}
+var decoratorProject = /** @class */ (function () {
+    function decoratorProject(name) {
+        this.projectName = name;
+    }
+    decoratorProject.prototype.calcBudget = function () {
+        console.log("1000");
+    };
+    __decorate([
+        stopEditable(false)
+    ], decoratorProject.prototype, "calcBudget", null);
+    return decoratorProject;
+}());
+var decoratorProjectExample = new decoratorProject("Cool Project");
+decoratorProjectExample.calcBudget();
+decoratorProjectExample.calcBudget = function () {
+    console.log("2000");
+};
+decoratorProjectExample.calcBudget();

@@ -18,4 +18,46 @@ class carDecorator {
 
 }
 
-// Advanced Decorator 
+// Advanced Decorator
+function printable (constructorFn: Function) {
+    constructorFn.prototype.printable = function() {
+        console.log(this);
+    }
+}
+
+console.log("-------------------------------");
+
+@logging(true)
+@printable
+class Plant {
+    name = "Green Plant";
+}
+const plantAgin = new Plant();
+(<any>plantAgin).printable();
+
+//Method Decorator
+function stopEditable(value: boolean) {
+    return function(target: any, propName: any, descriptor: PropertyDescriptor) {
+        descriptor.writable = value;
+    }
+}
+
+class decoratorProject {
+    projectName: string;
+
+    constructor (name: string) {
+        this.projectName = name;
+    }
+
+    @stopEditable(false)
+    calcBudget() {
+        console.log("1000");
+    }
+}
+
+const decoratorProjectExample = new decoratorProject("Cool Project");
+decoratorProjectExample.calcBudget();
+decoratorProjectExample.calcBudget = function() {
+    console.log("2000");
+}
+decoratorProjectExample.calcBudget();
