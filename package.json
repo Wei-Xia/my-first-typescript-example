@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server",
-    "build": "gulp"
+    "build": "webpack -d --watch",
+    "build: prod": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "gulp-typescript": "^3.2.3",
     "lite-server": "^2.3.0",
     "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
     "webpack": "^3.10.0"
   },
   "dependencies": {
