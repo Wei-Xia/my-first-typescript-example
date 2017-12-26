@@ -19,6 +19,8 @@
   "homepage": "https://github.com/Wei-Xia/my-first-typescript-example#readme",
   "devDependencies": {
     "@types/jquery": "^3.2.17",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.2.3",
     "lite-server": "^2.3.0"
   },
   "dependencies": {
